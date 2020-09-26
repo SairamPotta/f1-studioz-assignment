@@ -1,0 +1,25 @@
+[{
+  "productId": 25698789,
+  "productType": "Earrings",
+  "purity": 14,
+  "weight": 3.44,
+  "price": 15000
+}, {
+  "productId": 36898789,
+  "productType": "Bangles",
+  "purity": 13,
+  "weight": 2.3,
+  "price": 12500
+}, {
+  "productId": 368798575,
+  "productType": "Rings",
+  "purity": 16,
+  "weight": 4.2,
+  "price": 20000
+}, {
+  "productId": 567897854,
+  "productType": "Braclet",
+  "purity": 14,
+  "weight": 8.2,
+  "price": 40000
+}]

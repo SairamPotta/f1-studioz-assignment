@@ -1,0 +1,28 @@
+<div class="h5 p-2">Choose payment method</div>
+<div class="container">
+  <mat-radio-group>
+    <div class="card col-8 p-2 shadow margin-auto" *ngFor="let option of paymentOptions">
+      <mat-radio-button [value]='option' (change)="onSelectOfTestOption($event)" color="primary">
+        <div class="pl-4">
+          <img [src]="option.image" alt="option.name" height="30px" width="30px">
+          <span class="pl-2">
+            {{ option.name }}
+          </span>
+        </div>
+      </mat-radio-button>
+    </div>
+  </mat-radio-group>
+</div>
+<ng-container *ngIf="paymentMethod === 'Pickup from store'">
+  <mat-form-field appearance="legacy" class="col">
+    <mat-label>Please select store</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let o of outlets" [value]="o">
+        {{ o }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</ng-container>
+<app-bill [totalPrice]="finalPrice" [isPaymentComponent]="true" [showHide]="false"></app-bill>
+
+<button class="btn btn-primary btn-block" (click)="success()">Submit</button>

@@ -1,0 +1,93 @@
+body {
+  font-size: 16px;
+}
+
+.stepper-horizontal {
+  display: table;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #eee;
+  padding-bottom: 10px;
+}
+
+.stepper-horizontal .step {
+  display: table-cell;
+  position: relative;
+}
+
+.stepper-horizontal .step:first-child .step-bar-left,
+.stepper-horizontal .step:last-child .step-bar-right {
+  display: none;
+}
+
+.stepper-horizontal .step .step-circle {
+  width: 15px;
+  height: 15px;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #405b77;
+}
+
+.stepper-horizontal.orange .step.active .step-circle {
+  background-color: white;
+  color: black;
+}
+
+.stepper-horizontal .step.done .step-circle {
+  background-color: #405b77;
+  border-color: #405b77;
+  color: white;
+}
+
+.stepper-horizontal .step .step-title {
+  margin: 10px;
+}
+
+.stepper-horizontal .step .step-title {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.stepper-horizontal .step.active .step-title {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.stepper-horizontal .step.done .step-title {
+  color: #405b77;
+}
+
+.stepper-horizontal .step .step-bar-left,
+.stepper-horizontal .step .step-bar-right {
+  position: absolute;
+  bottom: 7px;
+  height: 1px;
+  border-top: 1px solid black;
+}
+
+.stepper-horizontal .step .step-bar-right {
+  right: 0;
+  left: 50%;
+  margin-left: 20px;
+}
+
+.stepper-horizontal .step .step-bar-left {
+  left: 0;
+  right: 50%;
+  margin-right: 20px;
+}
+
+.relative {
+  position: relative;
+
+  img {
+    position: absolute;
+    left: -6px;
+    top: -5px;
+  }
+}

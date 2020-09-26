@@ -1,0 +1,15 @@
+<header class="d-flex justify-content-between p-2">
+  <div class="d-flex logo">
+    <img src="assets/Images/kraya-logo.svg" alt="logo" height="25px">
+  </div>
+  <div class="close" (click)='emitResponse()'>
+    <img src="assets/Images/close-icon.svg" alt="close" height="20px" class="pointer">
+  </div>
+</header>
+<section>
+  <app-checkout-steps></app-checkout-steps>
+  <div class="gray">
+    <router-outlet></router-outlet>
+  </div>
+  <!-- <app-products-info></app-products-info> -->
+</section>

@@ -1,0 +1,46 @@
+<ng-container *ngIf="totalPrice > 0">
+  <ng-container *ngIf="!showHide">
+    <ul class="list-group shadow-none m-1">
+      <li class="list-group-item d-flex justify-content-between align-items-center p-2 border-0 font-weight-bold h5">
+        Gand Total
+        <span> {{ finalPrice | currency: 'INR' }}
+          <button (click)="showHide = !showHide" class="btn">
+            <img src="assets/Images/right-arrow.svg" alt="arrow" class="down-arrow">
+          </button>
+        </span>
+      </li>
+    </ul>
+  </ng-container>
+  <ng-container *ngIf="showHide">
+    <div class="card p-2 shadow bill-card m-1">
+      <div class="h4">
+        Order Summary
+        <button (click)="showHide = !showHide" class="btn">
+          <img src="assets/Images/right-arrow.svg" alt="arrow" class="up-arrow">
+        </button>
+      </div>
+      <ul class="list-group shadow-none">
+        <li class="list-group-item d-flex justify-content-between align-items-center p-2 border-0">
+          discount price
+          <span class="">{{ disCountprice }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center p-2 border-0">
+          Taxable amount
+          <span class="">{{ totalPrice }}</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center p-2 border-0">
+          CGST
+          <span class="">1.5%</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center p-2 border-left-0 border-right-0">
+          SGST
+          <span class="">1.5%</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center p-2 border-0 font-weight-bold h5">
+          Gand Total
+          <span> {{ finalPrice | currency: 'INR' }}</span>
+        </li>
+      </ul>
+    </div>
+  </ng-container>
+</ng-container>

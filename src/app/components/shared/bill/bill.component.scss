@@ -1,0 +1,12 @@
+.down-arrow {
+  transform: rotate(90deg);
+}
+
+.up-arrow {
+  transform: rotate(-90deg);
+}
+
+.bill-card {
+  border-bottom: 10px solid gray;
+  border-image: url(../../../../assets/Images/border.png) 30 round;
+}

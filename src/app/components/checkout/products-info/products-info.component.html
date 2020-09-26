@@ -1,0 +1,49 @@
+<form [formGroup]="productsInfo" class="">
+  <mat-tab-group [selectedIndex]="selectedValue" (selectedIndexChange)="selectedValue = $event">
+    <mat-tab formArrayName="products" *ngFor="let p of getProductArray(); index as i" [label]="'Product - ' + i">
+      <div [formGroupName]="i" class="p-1">
+        <div>
+          <mat-form-field appearance="legacy" class="col">
+            <mat-label>Model/Product Id#</mat-label>
+            <input type="text" placeholder="Model/Product Id#" matInput formControlName="productId"
+              [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" (closed)="onProductChange(i)">
+              <mat-option *ngFor="let option of productIds" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="legacy" class="col">
+            <mat-label>Product Type</mat-label>
+            <input matInput placeholder="Product Type" readonly formControlName="productType">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="legacy" class="col">
+            <mat-label>Purity</mat-label>
+            <input matInput placeholder="Purity" readonly formControlName="purity">
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field appearance="legacy" class="col">
+            <mat-label>Weight</mat-label>
+            <input matInput placeholder="Weight" readonly formControlName="weight">
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+
+  <ng-container *ngIf="productsInfo.get('products').value.length < 2">
+    <button [disabled]="productsInfo.invalid" class="btn btn-primary btn-sm m-2" (click)="loadProduct()">
+      Add Product
+    </button>
+  </ng-container>
+</form>
+
+<app-bill [totalPrice]="getTotalPrice()"></app-bill>
+<button [disabled]="productsInfo.invalid" class="btn btn-primary btn-block" (click)="naviateCustomer()">Submit & Goto
+  Customer Details
+</button>

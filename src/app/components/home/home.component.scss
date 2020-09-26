@@ -1,0 +1,43 @@
+.right-arrow {
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: white;
+}
+
+.white {
+  color: white;
+}
+
+footer {
+  position: relative;
+  top: calc(100vh - 100px);
+}
+
+@media only screen and (max-width: 600px) {
+  footer {
+    top: calc(100vh - 120px);
+
+    .logo {
+      img {
+        height: 25px;
+      }
+    }
+
+    .controls {
+      img {
+        height: 15px;
+      }
+    }
+
+    .billing {
+      img {
+        height: 15px;
+      }
+
+      button,
+      span {
+        font-size: 8px;
+      }
+    }
+  }
+}
